@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Material Design for Bootstrap</title>
+  <title>Proyecto dashboard </title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->
@@ -25,11 +25,8 @@
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
       <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-4">
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
-          </a>
           <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic </span>
+            <i class="fas fa-chart-area fa-fw me-3"></i><span>Graficas del clima </span>
           </a>
         </div>
       </div>
@@ -40,56 +37,7 @@
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <!-- Container wrapper -->
       <div class="container-fluid">
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
-          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">
-          <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt="" loading="lazy" />
-        </a>
-        <!-- Search form -->
-        <form class="d-none d-md-flex input-group w-auto my-auto">
-          <input autocomplete="off" type="search" class="form-control rounded"
-            placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
-          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
-        </form>
-
-        <!-- Right links -->
-        <ul class="navbar-nav ms-auto d-flex flex-row">
-          <!-- Notification dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-bell"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">1</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Some news</a></li>
-              <li><a class="dropdown-item" href="#">Another news</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Something else</a>
-              </li>
-            </ul>
-          </li>
-
-
-          <!-- Avatar -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
-              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22"
-                alt="" loading="lazy" />
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">My profile</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
+          <img src="https://images.squarespace-cdn.com/content/v1/5572b7b4e4b0a20071d407d4/1487090874274-FH2ZNWOTRU90UAF5TA2B/Weather+Targeting" height="55" alt="" />
       </div>
       <!-- Container wrapper -->
     </nav>
@@ -123,11 +71,10 @@
                     <div class="card-body">
                       <div class="d-flex justify-content-between px-md-1">
                         <div class="align-self-center">
-                          <i class="far fa-comment-alt text-warning fa-3x"></i>
                         </div>
                         <div class="text-end">
-                          <h3>156</h3>
-                          <p class="mb-0">New Comments</p>
+                          <h3 id="latitude"></h3>
+                          <p class="mb-0">Latitud</p>
                         </div>
                       </div>
                     </div>
@@ -141,8 +88,8 @@
                           <i class="fas fa-chart-line text-success fa-3x"></i>
                         </div>
                         <div class="text-end">
-                          <h3>64.89 %</h3>
-                          <p class="mb-0">Bounce Rate</p>
+                          <h3 id="elevation"></h3>
+                          <p class="mb-0">Elevacion</p>
                         </div>
                       </div>
                     </div>
@@ -156,8 +103,8 @@
                           <i class="fas fa-map-marker-alt text-danger fa-3x"></i>
                         </div>
                         <div class="text-end">
-                          <h3>423</h3>
-                          <p class="mb-0">Total Visits</p>
+                          <h3 id='timeZone'></h3>
+                          <p>Time Zone</p>
                         </div>
                       </div>
                     </div>
@@ -169,7 +116,7 @@
       <section class="mb-4">
         <div class="card">
           <div class="card-header py-3">
-            <h5 class="mb-0 text-center"><strong>weather</strong></h5>
+            <h5 class="mb-0 text-center"><strong>Clima</strong></h5>
           </div>
           <div class="card-body">
             <canvas class="my-4 w-100" id="myChart" height="380"></canvas>
@@ -180,10 +127,10 @@
       <section class="mb-4">
         <div class="card">
           <div class="card-header py-3">
-            <h5 class="mb-0 text-center"><strong>weather</strong></h5>
+            <h5 class="mb-0 text-center"><strong>Clima</strong></h5>
           </div>
           <div class="card-body">
-            <canvas class="my-4 w-100" id="myChart" height="380"></canvas>
+            <canvas class="my-4 w-100" id="myChart2" height="380"></canvas>
           </div>
         </div>
       </section>
