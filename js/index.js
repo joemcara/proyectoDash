@@ -63,6 +63,23 @@ let load = (data) => {
     bar(data)
 }
 
+let loadlnocar = () =>{
+    let URL_proxy = 'https://cors-anywhere.herokuapp.com/' 
+    let URL = URL_proxy + 'https://www.inocar.mil.ec/mareas/consultan.php';
+
+    fetch(URL)
+           .then(response => response.text())
+          .then(data => {
+             const parser = new DOMParser();
+             const xml = parser.parseFromString(data, "text/html");
+             let contenedorMareas = xml.getElementsByTagName('div')[0];
+             let contenedorHTML = document.getElementById('table-container');
+             contenedorHTML.innerHTML = contenedorMareas.innerHTML;
+             console.log(xml);
+          })
+          .catch(console.error);
+
+}
     (
         function () {
             let meteo = localStorage.getItem('meteo');
@@ -82,7 +99,8 @@ let load = (data) => {
               } else {
             
                   /* CARGAR DATA DESDE LA MEMORIA */
-                  load(JSON.parse(meteo))
+                  load(JSON.parse(meteo));
+                  loadlnocar();
               }
         }
     )();
